@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Anonymous Message Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Product Name with SAPS Logo -->
+      <div class="product-header">
+        <h1 class="product-name">Nisho.org</h1>
+        <span class="separator">|</span>
+        <img src="/sapslogo.png" alt="SAPS Logo" class="saps-logo" />
+      </div>
+
+      <!-- Product Description (Outside Form) -->
+      <h2 class="product-description">
+        In Partnership with the South African Police Service.
+      </h2>
+
+      <!-- Anonymous Message Form -->
+      <div class="form-box">
+        <h1>See Something, Say Something</h1>
+        <p>Share your report anonymously.</p>
+
+        <form
+          action="#"
+          method="post"
+          class="message-form"
+          onsubmit="return validateForm()"
+        >
+          <textarea
+            name="message"
+            id="message"
+            rows="6"
+            placeholder="Type your message here..."
+          ></textarea>
+
+          <!-- Dropdown Selection for Provinces -->
+          <select name="province" id="province" required>
+            <option value="" disabled selected>Select your province</option>
+            <option value="Eastern Cape">Eastern Cape</option>
+            <option value="Free State">Free State</option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="Limpopo">Limpopo</option>
+            <option value="Mpumalanga">Mpumalanga</option>
+            <option value="Northern Cape">Northern Cape</option>
+            <option value="North West">North West</option>
+            <option value="Western Cape">Western Cape</option>
+          </select>
+
+          <!-- Optional Contact Information -->
+          <input
+            type="text"
+            name="contactInfo"
+            id="contactInfo"
+            placeholder="Optional: Enter your contact info for follow-ups / rewards"
+          />
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+      <!-- Guidelines Section (Outside Form) -->
+      <div class="guidelines">
+        <ul>
+          <li>
+            When providing information on criminals and their actions, remember
+            to answer: Who did what to whom, when, where, why and how.
+          </li>
+          <li>
+            Remember, the detectives are keen to follow up your information.
+            Please give as many details as possible.
+          </li>
+          <li>Alternatively, make use of our WhatsApp line below:</li>
+        </ul>
+      </div>
+
+      <!-- WhatsApp Contact Info with Icon -->
+      <div class="whatsapp-contact">
+        <a href="https://wa.me/27794522523" target="_blank">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp Icon"
+            class="whatsapp-icon"
+          />
+        </a>
+      </div>
+
+      <footer>
+        <p>&copy; 2024 Nisho.org. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- JavaScript to Ensure Dropdown is Selected -->
+    <script>
+      function validateForm() {
+        var province = document.getElementById("province").value;
+        if (province === "") {
+          alert("Please select a province before submitting.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>
